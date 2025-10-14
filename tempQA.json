@@ -1,0 +1,4 @@
+[
+  { "question": "What is M220 error?", "answer": "Check the datamatrix symbology settings." },
+  { "question": "How to restart M230?", "answer": "Send the restart command via API or CLI." }
+]
