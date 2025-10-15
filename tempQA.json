@@ -1,4 +1,222 @@
 [
-  { "question": "What is M220 error?", "answer": "Check the datamatrix symbology settings." },
-  { "question": "How to restart M230?", "answer": "Send the restart command via API or CLI." }
+  {
+    "question": "What does the PWR LED indicate?",
+    "answer": "The blue PWR LED indicates that the reader is connected to the power supply."
+  },
+  {
+    "question": "What does the NET LED indicate?",
+    "answer": "The yellow NET LED indicates connection to the on-board Ethernet network."
+  },
+  {
+    "question": "What does the STATUS LED indicate in normal operation?",
+    "answer": "The red STATUS LED indicates a NO READ result."
+  },
+  {
+    "question": "What does the COM LED indicate?",
+    "answer": "The yellow COM LED indicates active communication on the main serial port. When connected to a Fieldbus network through the CBX500, it remains active due to polling even if no data is transmitted."
+  },
+  {
+    "question": "What does the TRIGGER LED indicate?",
+    "answer": "The yellow TRIGGER LED indicates the status of the reading phase."
+  },
+  {
+    "question": "What does the GOOD LED indicate?",
+    "answer": "The green GOOD LED confirms successful reading."
+  },
+  {
+    "question": "What does the READY LED indicate?",
+    "answer": "The green READY LED indicates that the reader is ready to operate."
+  },
+  {
+    "question": "How do the five LEDs behave during startup?",
+    "answer": "During reader startup (reset or restart), the five LEDs blink for one second."
+  },
+  {
+    "question": "Do the LED meanings change in X-PRESS Configuration mode?",
+    "answer": "Yes. In X-PRESS Configuration mode, the colors and meanings are as described in the X-PRESS Human Machine Interface section."
+  },
+  {
+    "question": "What is the default function of the keypad button?",
+    "answer": "By default, pressing the keypad button starts the X-PRESS interface for quick installation without using a PC."
+  },
+  {
+    "question": "What supply voltage and current range are shown on the product label in the figure?",
+    "answer": "The label example shows 10–30 VDC with current 0.40–0.14 A (illustrative values from the pictured unit)."
+  },
+  {
+    "question": "What additional identifiers are visible on the sample label in the figure?",
+    "answer": "Example identifiers include model \"MATRIX 220 382-010\", serial number format (e.g., S/N COOP20345), manufacturing date (e.g., September 2020), and a sample MAC address (e.g., 00:07:BE:00:7C:44)."
+  },
+  {
+    "question": "How does the aiming system assist code alignment?",
+    "answer": "Two red LED pointers project two equidistant square patterns onto the target area; the code should be centered between the two squares for proper alignment."
+  },
+  {
+    "question": "What are LED spots used for?",
+    "answer": "Two LED spots (green/red) can illuminate the target area to signal events such as Good Read or No Read; the associated event and deactivation (signal or timeout) are configurable via DL.CODE."
+  },
+  {
+    "question": "What is ID-NET?",
+    "answer": "A built-in high-speed interface dedicated to interconnecting readers, in addition to the Main and Auxiliary serial interfaces."
+  },
+  {
+    "question": "What is an 'ID-NET Synchronized' configuration?",
+    "answer": "Single station with multiple readers reading different sides of the same target; all share one presence sensor and activate/deactivate together; one combined message is sent to the host per cycle."
+  },
+  {
+    "question": "What is an 'ID-NET Multidata' configuration?",
+    "answer": "Multiple stations with single readers on independent conveyors; readers may be far apart and operate differently; each sends its own data to the host at the end of each reading phase without external multiplexers."
+  },
+  {
+    "question": "Where can connection and configuration details for ID-NET be found?",
+    "answer": "See 'ID-NET Interface' on page 65 for connections and 'Internal Network Configurations' on page 138 for configuration (as referenced by this chapter)."
+  },
+  {
+    "question": "What is X-PRESS?",
+    "answer": "An intuitive HMI designed to improve installation and maintenance, using five colored LEDs for status and a single push button for quick access to key functions."
+  },
+  {
+    "question": "Which functions are accessible via the X-PRESS push button?",
+    "answer": "Test (bar graph visualization), Aim/Autofocus (turn on LED pointers), Setup (Exposure Time and Gain calibration), and Learn (auto-detect and auto-configure for reading unknown codes)."
+  },
+  {
+    "question": "How do you enter a specific X-PRESS function?",
+    "answer": "Press and hold the button until the desired function LED (Test, Aim, Setup, or Learn) turns on, then release to enter that function."
+  },
+  {
+    "question": "What does the Test Mode Bar Graph indicate?",
+    "answer": "It shows Good Read Rate on the five LEDs with thresholds at ≥20%, ≥40%, ≥60%, ≥75%, and ≥95%. In NO READ, only the red Status LED blinks."
+  },
+  {
+    "question": "How do you exit Test Mode and is there an auto-timeout?",
+    "answer": "Press the X-PRESS button once to exit. By default, Test Mode automatically exits after three minutes."
+  },
+  {
+    "question": "What occurs in Focus/Aim mode?",
+    "answer": "LED pointers turn on and the aiming pattern is centered in the FoV to aid positioning and focusing; the Aim LED blinks. Press the button once to exit (aiming turns off after a short delay)."
+  },
+  {
+    "question": "What does the Setup function do and what indicates success or failure?",
+    "answer": "It performs Image Acquisition parameter calibration for the presented code. Success: parameters saved, Setup LED stops blinking, and three high-pitched beeps. Failure after ~5 seconds: exit without saving, Setup LED stops blinking, long low-pitched beep."
+  },
+  {
+    "question": "What does the Learn function do and how is it concluded?",
+    "answer": "It auto-detects and recognizes a single presented code; successive Learns replace the current code. Success: image processing/decoding parameters saved, Green Spot activates, Learn LED stops blinking, three high-pitched beeps. Failure after ~3 minutes: exit without saving with a long low-pitched beep."
+  },
+  {
+    "question": "How is an error condition indicated on the device?",
+    "answer": "The STATUS (red) and READY (green) LEDs blink simultaneously. Detailed diagnostics can be enabled for transmission on interfaces; see the Diagnostic Error Conditions chart in the DL.CODE Monitor."
+  },
+  {
+    "question": "What are the standard internal lighting options?",
+    "answer": "Standard models have 4 white LEDs. Standard High Power Illuminator models have 8 white LEDs, providing twice the lighting power."
+  },
+  {
+    "question": "What illuminators are available for DPM models?",
+    "answer": "DPM Internal Lighting System combines Top/Top Diffused and Bottom illuminators with Polarized and Non-Polarized options; available in Red or Blue. DPM High Power Red models provide twice the power for Polarized and Non-Polarized types."
+  },
+  {
+    "question": "Which illumination combinations are supported by each model type?",
+    "answer": "Standard White: Top+Bottom, Top, Bottom. DPM Red/Blue: Diffused Top+Bottom, Diffused Top, Diffused Bottom, Non-Polarized, Polarized. Standard High Power White/Red: Central+Top/Bottom Chain, Central Chain, Top/Bottom Chain. DPM High Power Red: Polarized, Non-Polarized."
+  },
+  {
+    "question": "Which applications use omnidirectional reading capabilities?",
+    "answer": "Automated document handling and mail processing systems using 2D, stacked, linear, and postal codes."
+  },
+  {
+    "question": "Can Matrix 220 read deformed or overprinted codes?",
+    "answer": "Yes. It can read deformed/overprinted codes, even when damaged or printed on reflective surfaces or curved items."
+  },
+  {
+    "question": "How does Matrix 220 perform with Direct Part Marking (DPM)?",
+    "answer": "It effectively reads low-contrast DPM codes made by dot peen, laser, or ink-jet on metal/PCB surfaces, including multi-dot elements and large element spacing."
+  },
+  {
+    "question": "How can illumination color help on colored codes/backgrounds?",
+    "answer": "Using Red or Blue light DPM models helps maximize contrast when codes or backgrounds are printed in different colors."
+  },
+  {
+    "question": "What precaution is recommended for real-time laser-marked codes?",
+    "answer": "Use Matrix 220 models with YAG filters to avoid burning the CMOS sensor."
+  },
+  {
+    "question": "Which Matrix 220 models support Digimarc Barcode?",
+    "answer": "Part numbers 937900017 (1.2MP STD-R 7mm HP) and 937900018 (1.2MP STD-R 12mm HP)."
+  },
+  {
+    "question": "What is Digimarc Barcode and how is it used?",
+    "answer": "A technology that imperceptibly encodes GTIN into artwork before printing; redundantly spread across packaging to enable easy capture without affecting design aesthetics. GS1 refers to it as DWCODE™."
+  },
+  {
+    "question": "What does HDR do?",
+    "answer": "HDR enhances low-intensity pixel values to improve image contrast and code readability."
+  },
+  {
+    "question": "When is HDR useful for skewed images?",
+    "answer": "When the outer image area is less exposed than the center due to large skew, HDR adjusts contrast to improve decoding."
+  },
+  {
+    "question": "How does HDR help with DPM illuminator heterogeneity?",
+    "answer": "At short distances (e.g., 50 mm), contrast may be heterogeneous; HDR normalizes contrast allowing the use of Standard Contrast decoding settings."
+  },
+  {
+    "question": "Can HDR improve decoding when codes in the FoV have different contrasts?",
+    "answer": "Yes. In the example, enabling HDR changes decoding from 2/4 codes to 4/4 codes within the same FoV."
+  },
+  {
+    "question": "How does HDR affect exposure time and line speed?",
+    "answer": "Enabling HDR allows reducing exposure time, which increases the maximum allowable line speed. The rule is Texp < X/LS (code resolution divided by line speed)."
+  },
+  {
+    "question": "What example exposure times and speeds are cited?",
+    "answer": "Without HDR, 250 µs allows ~1320 mm/s. With HDR, 100 µs allows ~3300 mm/s for C128 13 mil (0.33 mm) at 200 mm distance (example values)."
+  },
+  {
+    "question": "How do you enable HDR in DL.CODE?",
+    "answer": "Navigate to Advanced Setup > Image Settings > Image Quality > HDR Selector and select 'HDR'."
+  },
+  {
+    "question": "What Gain Multiplier is recommended when HDR is enabled?",
+    "answer": "Set Gain Multiplier to x1."
+  },
+  {
+    "question": "Which Matrix 220 model is designed for UV fluorescence applications?",
+    "answer": "Matrix 220 3U2-01U 1.2MP STD-UV 7MM HP."
+  },
+  {
+    "question": "What is the UV LED excitation wavelength and the recommended ink sensitivity?",
+    "answer": "The internal High Power UV LEDs mainly emit at 365 nm; use inks sensitive to this wavelength."
+  },
+  {
+    "question": "What optical filter is included and what does it pass?",
+    "answer": "A 415 nm Long Pass filter in front of the lens passes wavelengths greater than 415 nm (visible spectrum) and attenuates UV wavelengths."
+  },
+  {
+    "question": "Why are higher gain settings often required for UV applications?",
+    "answer": "UV fluorescence re-emission is typically weak versus standard illumination, so a high Gain Multiplier is needed—especially for dynamic applications with Very High Power lighting mode."
+  },
+  {
+    "question": "Which lighting mode is recommended for static or semi-static UV applications?",
+    "answer": "High Power-Strobed lighting mode."
+  },
+  {
+    "question": "Are the standard reading diagrams applicable to the UV model?",
+    "answer": "No. The reading diagrams referenced elsewhere are not for the UV model; UV performance depends on the ink and surface and should be tested with real samples."
+  },
+  {
+    "question": "What safety note is included for UV applications?",
+    "answer": "Refer to the LED Safety note (page x referenced)."
+  },
+  {
+    "question": "What items should be present when opening the package?",
+    "answer": "Matrix 220 reader (with connector plug/cover), Quick Reference Guide, Test Chart, Mounting Kit, two mounting screws, two washers, and a mounting bracket."
+  },
+  {
+    "question": "What IP protection is provided when Ethernet is unused on Ethernet models?",
+    "answer": "A sealing connector plug provides IP67 protection when the Ethernet port is not used."
+  },
+  {
+    "question": "For PoE models, what provides protection when COM/Trigger is unused?",
+    "answer": "The COM/Trigger connector cover provides protection when not used."
+  }
 ]
